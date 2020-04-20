@@ -137,6 +137,8 @@ func main() {
 	Router.GET("/square/oauth", HandleSquareOAuthCode)
 	Router.GET("/square/processcheckout", ProcessCheckout)
 
+	go StartEmployeeReportLoop()
+
 	Router.Run(os.Getenv("S_PORT")) // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
 
